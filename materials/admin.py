@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import *
+
+class MaterialsAdmin(admin.ModelAdmin):
+    list_display = ('house_id', 'item_name', 'date_received', 'quantity', 'item_unit', 'updated_at', 'is_active')
+    list_display_links = ('house_id', )
+    search_fields = ('item_name', )
+
+admin.site.register(Materials, MaterialsAdmin)
