@@ -28,4 +28,4 @@ class MaterialDeliveredListView(ListView):
         return context
 
     def get_queryset(self):
-        return Materials.objects.all().order_by('-created_at')
+        return Materials.objects.all().order_by('-date_received')

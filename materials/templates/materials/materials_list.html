@@ -1,13 +1,20 @@
+{% regroup object_list by date_received as delivered_list %}
 <h1>Materials Delivered</h1>
 <ul>
-{% for material in object_list %}
-    <li>House ID:{{ material.house_id}}</li>
-    <li>ITEM: {{ material.item_name}}</li>
-    <li>DATE RECEIVED: {{ material.date_received}}</li>
-    <li>QUANTITIY: {{ material.quantity}}</li>
-    <li>ITEM_UNIT: {{ material.item_unit}}</li>
-    <br>
-{% empty %}
-    <li>No articles yet.</li>
+{% for date_received in delivered_list %}
+    <li>{{ date_received.grouper }}
+    <ul>
+    {% for material in date_received.list %}
+        <li>House ID:{{ material.house_id}}</li>
+        <li>ITEM: {{ material.item_name}}</li>
+        <li>DATE RECEIVED: {{ material.date_received}}</li>
+        <li>QUANTITIY: {{ material.quantity}}</li>
+        <li>ITEM_UNIT: {{ material.item_unit}}</li>
+        <br>
+    {% empty %}
+        <li>No articles yet.</li>
+    {% endfor %}
+    </ul>
+    </li>
 {% endfor %}
 </ul>
