@@ -1,2 +1,2 @@
 # innuatujenge
-Mini api to track flow of materials
+Mini app to track flow of materials
