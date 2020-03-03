@@ -5,7 +5,8 @@ from django.db import models
 class Materials(models.Model):
     house_id = models.IntegerField()
     item_name = models.CharField(max_length=200)
-    date_received = models.DateTimeField()
+    date_received = models.DateField()
+    time_received = models.TimeField()
     quantity = models.IntegerField()
     KILOGRAMS = 'kgs'
     GRAMS = 'g'

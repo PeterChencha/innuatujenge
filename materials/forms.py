@@ -8,11 +8,17 @@ from .widgets import BootstrapDateTimePickerInput
 
 class MaterialDeliveryForm(ModelForm):
 
-    date_received = forms.DateTimeField(
-        widget=forms.DateTimeInput(
-        attrs={'type': 'date'}
+    date_received = forms.DateField(
+        widget=forms.DateInput(
+        attrs={'type': 'date'},
+        )
     )
-)
+
+    time_received = forms.TimeField(
+        widget=forms.TimeInput(
+        attrs={'type': 'time'},
+        )
+    )
     class Meta:
         model = Materials
-        fields = ['house_id', 'item_name', 'date_received', 'quantity', 'item_unit']
+        fields = ['house_id', 'item_name', 'date_received', 'time_received', 'quantity', 'item_unit']
