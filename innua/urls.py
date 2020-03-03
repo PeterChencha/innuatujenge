@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from materials.views import material_delivery_create_view
+from materials.views import material_delivery_create_view, MaterialDeliveredListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('material/delivery', material_delivery_create_view)
+    path('material/delivery', material_delivery_create_view),
+    path('material/delivered/list', MaterialDeliveredListView.as_view(), name='delivery-list')
     #path('', include('materials.urls'))
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

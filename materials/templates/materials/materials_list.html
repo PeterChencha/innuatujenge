@@ -1,0 +1,13 @@
+<h1>Materials Delivered</h1>
+<ul>
+{% for material in object_list %}
+    <li>House ID:{{ material.house_id}}</li>
+    <li>ITEM: {{ material.item_name}}</li>
+    <li>DATE RECEIVED: {{ material.date_received}}</li>
+    <li>QUANTITIY: {{ material.quantity}}</li>
+    <li>ITEM_UNIT: {{ material.item_unit}}</li>
+    <br>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
