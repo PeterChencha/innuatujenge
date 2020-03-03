@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here
 
 class Materials(models.Model):
-    house_id = models.IntegerField(primary_key=True)
+    house_id = models.IntegerField()
     item_name = models.CharField(max_length=200)
     date_received = models.DateTimeField()
     quantity = models.IntegerField()
