@@ -7,7 +7,7 @@
     {% for material in date_received.list %}
         <li>House ID:{{ material.house_id}}</li>
         <li>ITEM: {{ material.item_name}}</li>
-        <li>DATE RECEIVED: {{ material.date_received}}</li>
+        <li>DATE RECEIVED: {{ material.date_received}} {{material.time_received}}</li>
         <li>QUANTITIY: {{ material.quantity}}</li>
         <li>ITEM_UNIT: {{ material.item_unit}}</li>
         <br>
